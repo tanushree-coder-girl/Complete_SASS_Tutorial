@@ -122,6 +122,106 @@
     }
 
 7) SASS Nesting
+    Nesting means- child element inside parents elememt 
+
+    for example=> 
+    <header>
+        <nav>
+            <ul> 
+                <li> Home </li>
+                <li> About </li>
+            </ul>
+        </nav>
+    </header>
+
+    header{
+        position:fixed;
+        top:0;
+        right:0;
+        width:100%;
+        height:5rem;
+
+        nav{
+
+            ul{
+                padding:1rem;
+
+                li{
+                    list-style:none;
+                    color:white;
+                    &:hover{
+                        color:red;
+                    }
+                }
+            }
+        }
+    }
+
+8) Operators 
+    Same like mathematical Operators like + , -, * , / etc 
+    for example => 
+
+    font-size :10px + 5;   //so it is 15px
+    font-size :10px - 5;   //so it is 5px
+    font-size :10px * 5;   //so it is 50px 
+    font-size :10px / 5;   //so it is 2px
+
+    margin-left :12rem + 2rem; 
+
+    We cannot use Different units 
+    for example 
+    font-size :1rem + 10px ;
+    //this is 2 Different unit rem and px so it gives error. 
+
+9) SASS Maps
+    map method can store more than one value in variable in key pair : 
+
+    syntx 
+    $variableName : ('key': value, 'key': value);
+
+    for example=> 
+    $fontSize : ('small-font': 1rem , 'medium-font':1.1rem);
+
+    how to use=>
+    p{
+        font-size: map-get($map: $fontSize, $key: 'small-font');
+    }
+    h3{
+        font-size: map-get($map: $fontSize, $key: 'medium-font');
+    }
+
+10) Ampersand ( & )
+    It Represents parents child relation 
+    It target Parent tag 
+    for example 
+    button{
+        background:red;
+
+        &:hover{
+            background:blue;
+        }
+    }
+
+11) SASS Mixins And Include 
+    It is like functions in programming language 
+    reusable bit of code. 
+
+    for example => 
+    @mixin flexBox {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .contanier{
+        @include flexBox;
+    }
+
+    //also pass arguments in mixins 
+
+
+
+
 
 
 
