@@ -1,0 +1,120 @@
+------------- Complete SASS From Beginer To Advanced ----------
+
+1. Introduction 
+    SASS is a CSS preprocessor.
+    SASS stands for syntactically awesome style sheet. 
+    It is an extension to CSS. 
+    Browser does not understand SASS, so it is translated to CSS. 
+    In Short SASS is CSS with Super Powers. 
+
+2. Why To Use SASS 
+    It helps developer to reduce repetation of css.
+    It helps to organize large stylesheets. 
+    It makes it easy to share design within and across projects. 
+
+3. Features of SASS
+    Write Less Do More. 
+    Cross Browser Compatability. 
+    It has many amazing Features like variables , nesting, mixins, particals etc. which helps us to write and manage stylesheets quickly and easily. 
+
+4. SASS Syntax and Difference Between SASS and SCSS . 
+    SASS Supports 2 Different types of syntax: 
+    1) Intended (SASS extension)
+    2) SCSS     (SCSS extension)
+
+    Difference Between normal css vs Intended (SASS) vs SCSS syntax 
+
+    1) Normal Css Example 
+        nav{
+            background-color:red;
+        }
+        nav ul{
+            display:flex;
+            justify-content:space-between;
+        }
+        nav ul li{
+            list-style:none;
+        }
+        nav ul li a{
+            text-decoration:none;
+            font-size:16px;
+        }
+        nav ul li a:hover{
+            font-size:20px;
+        }
+
+    2) Intended (SASS) Example
+        nav 
+            background-color:red;
+
+            ul 
+                display:flex;
+                justify-content:space-between;
+
+                li
+                    list-style:none;
+
+                    a
+                        text-decoration:none;
+                        font-size:16px; 
+                        &:hover
+                            font-size:20px;
+        
+    3) SCSS extension Example 
+        nav{
+            background-color:red;
+            ul{
+                display:flex;
+                justify-content:space-between;
+                li{
+                    list-style:none;
+                    a{
+                        text-decoration:none;
+                        font-size:16px; 
+                        &:hover{
+                            font-size:20px;
+                        }
+                    } 
+                }
+            }
+        }
+
+        We will use SCSS extension in these tutorial.
+        Bcoz Scss is most famous amongst them and it is easy to understand. 
+
+5. SASS Setup And its Basics 
+    We will use Vs code in these tutorial 
+    let Install a extension in vs code 
+
+        Live Sass Compiler
+
+    live sass compiler is a extension which compile our .scss file and convert it in .css file. 
+
+    create 2 files 
+    1) index.html 
+    2) style.scss 
+
+    Now click on watch sass 
+
+    when you click on watch sass it will automatically generates 2 files named as style.css and style.css.map 
+
+    so which code you write in style.scss file so live sass compiler automatically convert this code in style.css file. 
+    style.css.map file is help in mapping or converting style.scss file to style.css file 
+
+    now add link tag in html file like 
+    it is must to add .css file in link tag 
+
+    <link rel="stylesheet" href="style.css">
+
+    now we can write code in style.scss file
+
+6) Variables 
+
+
+
+
+
+
+
+
+  
