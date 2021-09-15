@@ -1,3 +1,7 @@
+// Varialbes in Sass 
+$bg-color : rgb(15, 15, 15);
+$text-color : #fafafa;
+
 *{
     margin: 0;
     padding: 0;
@@ -7,8 +11,8 @@ html{
     overflow-x: hidden;
 }
 body{
-    background-color: rgb(15, 15, 15);
-    color: #fafafa;
+    background-color: $bg-color;
+    color: $text-color;
     min-height: 100vh;
     width: 100%;
     font-family: 'Courier New', Courier, monospace;

@@ -109,6 +109,19 @@
     now we can write code in style.scss file
 
 6) Variables 
+    syntax to declare variables is 
+    $varibleName = value;
+    for example 
+    $bg-color : red;
+    $text-color : white;
+
+    how to use variables inside elememt is -
+    body{
+        background-color : $bg-color;
+        color : $text-color;
+    }
+
+7) SASS Nesting
 
 
 
