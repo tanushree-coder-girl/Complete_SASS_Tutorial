@@ -15,7 +15,7 @@
 3. Features of SASS
     Write Less Do More. 
     Cross Browser Compatability. 
-    It has many amazing Features like variables , nesting, mixins, particals etc. which helps us to write and manage stylesheets quickly and easily. 
+    It has many amazing Features like variables , nesting, mixins, partials etc. which helps us to write and manage stylesheets quickly and easily. 
 
 4. SASS Syntax and Difference Between SASS and SCSS . 
     SASS Supports 2 Different types of syntax: 
@@ -207,17 +207,112 @@
     reusable bit of code. 
 
     for example => 
-    @mixin flexBox {
-        display:flex;
-        align-items:center;
-        justify-content:center;
+        @mixin flexBox(){
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .contanier{
+            @include flexBox();
+        }
+
+    //also  pas argument 
+        @mixin flexBox($align){
+            display:flex;
+            align-items:$align;
+            justify-content:center;
+        }
+
+        .contanier{
+            @include flexBox(center);
+        }
+
+    //also pass multiple arguments in mixins 
+    //pass argument in same order in which order you received agrument 
+
+        @mixin flexBox($align , $justify){
+            display:flex;
+            align-items:$align;
+            justify-content:$justify;
+        }
+
+        .contanier{
+            @include flexBox(center, space-between);
+        }
+    
+    //also pass default value 
+        @mixin flexBox($align , $justify:center){
+            display:flex;
+            align-items:$align;
+            justify-content:$justify;
+        }
+
+        .contanier{
+            @include flexBox(center);
+        }
+
+12) SASS Extend 
+    Using @extend lets you share a set of CSS properties from one selector to another. It helps keep your Sass very DRY. inherit properties from another class.
+
+    for example 
+    .btn{
+        padding:.5rem 2rem;
+        background:yellow;
+        font-size:1rem;
+        margin:1rem;
+        outline:none;
+        border:none;
+        border-radius:.5rem;
     }
 
-    .contanier{
-        @include flexBox;
+    button {
+        @extend .btn;
     }
 
-    //also pass arguments in mixins 
+13) SASS partials 
+    partials is like import and export . 
+    we keep separate files for variables and mixins then import in out main file. 
+    partials always creates with _fileName.scss 
+
+    for example => 
+    create and put all variables in _variables.scss file
+
+    _variables.scss 
+    
+    now import this file in style.scss
+    There are 3 ways to import 
+
+    @import '_variables.scss';
+    @import '_variables';
+    @import 'variables';            //this one is best 
+
+14) Problem And solution
+    if .css file is deleted by mistake then no need to worry .
+    if you have your .scss file then you can easily recover your .css files 
+    start your sass live server by clicking on watch sass then it will generates your .css files. 
+
+    Watch sass
+
+15) Change Css File generation Location 
+    By default watch sass - saas live compiler generates your file at root location in your project. 
+    but if you want to change the location of css file then 
+    Go to 
+
+    file / preferences / settings / user / Extensions / live sass compile config / 
+    
+    live saas compile > settings formats  => Edit in settings.json 
+
+    "savePath": "null" change this path to 
+   
+    "savePath": "CSS/"
+
+    again start => Watch Saas 
+    
+    now change path in link tag 
+    <link rel="stylesheet" href="CSS/style.css">
+
+------------------------------------- Completed SASS----------------- ----------
 
 
 
